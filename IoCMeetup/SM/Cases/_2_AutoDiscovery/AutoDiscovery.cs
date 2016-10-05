@@ -14,7 +14,7 @@ namespace SM.Cases._2_AutoDiscovery {
 
             // act
             registry.Scan(x => {
-                              x.TheCallingAssembly();
+                              x.AssemblyContainingType<IMaterial>();
                               x.AddAllTypesOf<IMaterial>();
                           });
             var container = new Container(registry);
@@ -38,7 +38,7 @@ namespace SM.Cases._2_AutoDiscovery {
 
             // act
             registry.Scan(x => {
-                              x.TheCallingAssembly();
+                              x.AssemblyContainingType<IMaterial>();
                               x.AddAllTypesOf<IMaterial>();
                           });
             var container = new Container(registry);
