@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cases\_1_GeneralCases\RegistryAndResolution.cs" />
     <Compile Include="MaterialDomain\IMaterial.cs" />
     <Compile Include="MaterialDomain\Metallic.cs" />
     <Compile Include="MaterialDomain\Stone.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="PresentationDomain\IViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceDomain\Services.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
