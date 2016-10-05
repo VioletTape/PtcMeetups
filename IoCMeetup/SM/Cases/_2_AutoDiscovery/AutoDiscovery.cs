@@ -33,5 +33,23 @@ namespace SM.Cases._2_AutoDiscovery {
                 .Should()
                 .Be(7);
         }
+
+        [Test]
+        public void GetInstanceByType()
+        {
+            var registry = new Registry();
+
+            // act
+            registry.Scan(x => {
+                x.TheCallingAssembly();
+                x.AddAllTypesOf<IMaterial>();
+            });
+            var container = new Container(registry);
+
+            // assert
+            var gold = container.GetInstance<Gold>();
+
+            gold.Should().NotBeNull();
+        }
     }
 }
