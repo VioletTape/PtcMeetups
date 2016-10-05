@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>LightInjectExample</RootNamespace>
     <AssemblyName>LightInjectExample</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,7 +57,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cases\1_GeneralCases\RegisterAndReuse.cs" />
+    <Compile Include="Cases\AutoDiscovery\Class1.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="MaterialDomain\IMaterial.cs" />
+    <Compile Include="MaterialDomain\Metallic.cs" />
+    <Compile Include="MaterialDomain\Stone.cs" />
+    <Compile Include="PresentationDomain\IView.cs" />
+    <Compile Include="PresentationDomain\IViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
