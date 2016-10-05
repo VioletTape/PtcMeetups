@@ -51,6 +51,7 @@ namespace DryIocExample.Cases._2_AutoDiscovery {
         /// how to setup Discovery feature
         /// </summary>
         [Test]
+        [Ignore("Comment attribute to see that it not works")]
         public void GetInstanceByType_Directly() {
             var container = new Container();
 

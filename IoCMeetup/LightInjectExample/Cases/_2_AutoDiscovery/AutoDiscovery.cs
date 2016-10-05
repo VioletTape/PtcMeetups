@@ -8,7 +8,12 @@ using NUnit.Framework;
 namespace LightInjectExample.Cases._2_AutoDiscovery {
     [TestFixture]
     public class AutoDiscovery {
+        /// <summary>
+        /// Intented to fail. I want to show that it's not obvious
+        /// how to setup Discovery feature
+        /// </summary>
         [Test]
+        [Ignore("Comment attribute to see that it not works")]
         public void GetAllMaterials_Naive() {
             var container = new ServiceContainer();
 
@@ -50,7 +55,12 @@ namespace LightInjectExample.Cases._2_AutoDiscovery {
 
 
 
+        /// <summary>
+        /// Intented to fail. I want to show that it's not obvious
+        /// how to setup Discovery feature
+        /// </summary>
         [Test]
+        [Ignore("Comment attribute to see that it not works")]
         public void GetInstanceByType_Naive() {
             var container = new ServiceContainer();
 
