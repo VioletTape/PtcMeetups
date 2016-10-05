@@ -9,7 +9,7 @@ namespace SM.Cases._2_AutoDiscovery {
     [TestFixture]
     public class AutoDiscovery {
         [Test]
-        public void MaterialTests() {
+        public void GetAllMaterials() {
             var registry = new Registry();
 
             // act

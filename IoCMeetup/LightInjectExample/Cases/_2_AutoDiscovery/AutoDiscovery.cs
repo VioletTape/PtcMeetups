@@ -9,7 +9,7 @@ namespace LightInjectExample.Cases._2_AutoDiscovery {
     [TestFixture]
     public class AutoDiscovery {
         [Test]
-        public void MaterialTests_Naive() {
+        public void GetAllMaterials_Naive() {
             var container = new ServiceContainer();
 
             // act 
@@ -29,7 +29,7 @@ namespace LightInjectExample.Cases._2_AutoDiscovery {
         }
 
         [Test]
-        public void MaterialTests_WithHints() {
+        public void GetAllMaterials_WithHints() {
             var container = new ServiceContainer();
 
             // act 

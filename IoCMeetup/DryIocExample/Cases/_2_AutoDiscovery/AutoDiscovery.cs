@@ -9,14 +9,14 @@ namespace DryIocExample.Cases._2_AutoDiscovery {
     [TestFixture]
     public class AutoDiscovery {
         [Test]
-        public void MaterialTests() {
+        public void GetAllMaterials() {
             var container = new Container();
 
             // act
             container.RegisterMany(new[] {
                                        typeof(IMaterial).Assembly
                                    }, type => type == typeof(IMaterial));
-
+            
             // assert
             var materials = container.ResolveMany<IMaterial>().ToList();
 
