@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMExample", "SM\SMExample.csproj", "{4B4060AC-4A73-4C0A-AD43-032FCC7974C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TinyIocExample", "TinyIocExample\TinyIocExample.csproj", "{9F6B55E9-A395-446A-B3F3-3207140778CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DryIocExample", "DryIocExample\DryIocExample.csproj", "{9F6B55E9-A395-446A-B3F3-3207140778CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightInjectExample", "LightInjectExample\LightInjectExample.csproj", "{07CE7454-855A-48E4-A5E1-807D69622461}"
 EndProject
