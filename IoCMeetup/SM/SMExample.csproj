@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cases\_1_GeneralCases\RegistryAndResolution.cs" />
+    <Compile Include="Cases\_2_AutoDiscovery\AutoDiscovery.cs" />
     <Compile Include="MaterialDomain\IMaterial.cs" />
     <Compile Include="MaterialDomain\Metallic.cs" />
     <Compile Include="MaterialDomain\Stone.cs" />
@@ -77,6 +78,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

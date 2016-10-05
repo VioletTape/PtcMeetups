@@ -1,6 +1,4 @@
-﻿using LightInjectExample.Domain;
-
-namespace LightInjectExample.MaterialDomain {
+﻿namespace LightInjectExample.MaterialDomain {
     public abstract class Naturals : IMaterial {}
 
 

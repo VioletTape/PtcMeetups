@@ -1,5 +1,3 @@
-using LightInjectExample.Domain;
-
 namespace LightInjectExample.MaterialDomain {
     public abstract class Metallic : IMaterial {}
 

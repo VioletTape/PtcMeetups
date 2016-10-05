@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cases\_1_GeneralCases\RegistryAndResolution.cs" />
+    <Compile Include="Cases\_2_AutoDiscovery\AutoDiscovery.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DryIoc\AsyncExecutionFlowScopeContext.cs" />
     <Compile Include="DryIoc\Container.cs" />

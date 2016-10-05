@@ -1,3 +1,3 @@
-﻿namespace LightInjectExample.Domain {
+﻿namespace LightInjectExample.MaterialDomain {
     public interface IMaterial { }
 }
