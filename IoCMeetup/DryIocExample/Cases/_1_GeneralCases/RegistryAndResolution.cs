@@ -7,7 +7,7 @@ namespace DryIocExample.Cases._1_GeneralCases {
     [TestFixture]
     public class RegistryAndResolution {
         [Test]
-        public void NestedResultionCase() {
+        public void NestedResoltionCase() {
             var container = new Container();
 
             container.Register<ServiceA, ServiceA>();

@@ -7,7 +7,7 @@ namespace SM.Cases._1_GeneralCases {
     [TestFixture]
     public class RegistryAndResolution {
         [Test]
-        public void NestedResultionCase() {
+        public void NestedResoltionCase() {
             var registry = new Registry();
             registry.For<ServiceA>().Use<ServiceA>();
             registry.For<ServiceB>().Use<ServiceB>();
