@@ -16,11 +16,11 @@ namespace SM.Cases._3_AutoMocking {
 
             // act & assert
             mock.ClassUnderTest.GetMessage()
-                 .Should()
-                 .Be("Hello from mock!");
+                .Should()
+                .Be("Hello from mock!");
         }
 
-         [Test]
+        [Test]
         public void CanSetMocks_Manual() {
             var mockFoo = Substitute.For<IFoo>();
             var mockBoo = Substitute.For<IBoo>();
@@ -29,22 +29,22 @@ namespace SM.Cases._3_AutoMocking {
             mockFoo.GetMessage().Returns("Hello from mock!");
 
             var container = new Container(_ => {
-                                              _.For<IFoo>().Use(mockFoo);
-                                              _.For<IBoo>().Use(mockBoo);
-                                              _.For<IBar>().Use(mockBar);
-                                              _.For<BigService>().Use<BigService>();
-                                          });
+                _.For<IFoo>().Use(mockFoo);
+                _.For<IBoo>().Use(mockBoo);
+                _.For<IBar>().Use(mockBar);
+                _.For<BigService>().Use<BigService>();
+            });
 
             // act
             var service = container.GetInstance<BigService>();
 
             // assert
             service.Should()
-                    .NotBeNull();
+                .NotBeNull();
 
             service.GetMessage()
-                    .Should()
-                    .Be("Hello from mock!");
+                .Should()
+                .Be("Hello from mock!");
         }
     }
-}   
+}

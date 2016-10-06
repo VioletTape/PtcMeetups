@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Linq;
-using System.Reflection;
 using NSubstitute;
 
 namespace StructureMap.AutoMocking {
     public class NSubstituteAutoMocker<T> : AutoMocker<T>
-            where T : class {
+        where T : class {
         private NSubstituteAutoMocker(ServiceLocator serviceLocator = null) : base(null) {
-             ServiceLocator = new NSubstituteServiceLocator();
-             Container = new AutoMockedContainer(ServiceLocator);
+            ServiceLocator = new NSubstituteServiceLocator();
+            Container = new AutoMockedContainer(ServiceLocator);
         }
 
         public NSubstituteAutoMocker() : this(null) {
@@ -39,7 +38,8 @@ namespace StructureMap.AutoMocking {
         public SubstituteFactory() {
             var type = typeof(Substitute);
 
-            var method = type.GetMethods().First(x => x.ContainsGenericParameters && x.GetGenericArguments().Length == 1);
+            var method =
+                type.GetMethods().First(x => x.ContainsGenericParameters && (x.GetGenericArguments().Length == 1));
             factory = typeToMock => method.MakeGenericMethod(typeToMock).Invoke(null, new object[] {null});
         }
 
