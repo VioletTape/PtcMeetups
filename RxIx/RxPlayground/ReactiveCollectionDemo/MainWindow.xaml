@@ -1,0 +1,19 @@
+﻿<Window x:Class="ReactiveCollectionDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReactiveCollectionDemo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <TextBlock>Filter: </TextBlock>
+            <TextBox Width="400" Text="{Binding Filter, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <ListBox ItemsSource="{Binding Source, Mode=TwoWay}"  MinHeight="100" Width="100"/>
+            <ListBox ItemsSource="{Binding Path=RC.View}" MinHeight="100" Width="100"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
