@@ -15,19 +15,19 @@ namespace LightInjectExample.Cases._3_AutoMocking {
             container.Register<BigService, BigService>();
 
             container.GetMock<IFoo>()
-                      .Setup(_ => _.GetMessage())
-                      .Returns("Hello from mock!");
-                
+                .Setup(_ => _.GetMessage())
+                .Returns("Hello from mock!");
+
             // act
             var service = container.GetInstance<BigService>();
 
             // assert
             service.Should()
-                    .NotBeNull();
+                .NotBeNull();
 
             service.GetMessage()
-                    .Should()
-                    .Be("Hello from mock!");
+                .Should()
+                .Be("Hello from mock!");
         }
 
         [Test]
@@ -37,9 +37,9 @@ namespace LightInjectExample.Cases._3_AutoMocking {
             var mockBar = new Mock<IBar>();
 
             mockFoo.Setup(_ => _.GetMessage())
-                      .Returns("Hello from mock!");
+                .Returns("Hello from mock!");
 
-            var container = new ServiceContainer(); 
+            var container = new ServiceContainer();
             container.RegisterInstance(typeof(IFoo), mockFoo.Object);
             container.RegisterInstance(typeof(IBoo), mockBoo.Object);
             container.RegisterInstance(typeof(IBar), mockBar.Object);
@@ -50,11 +50,11 @@ namespace LightInjectExample.Cases._3_AutoMocking {
 
             // assert
             service.Should()
-                    .NotBeNull();
+                .NotBeNull();
 
             service.GetMessage()
-                    .Should()
-                    .Be("Hello from mock!");
+                .Should()
+                .Be("Hello from mock!");
         }
     }
-}   
+}

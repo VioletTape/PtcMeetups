@@ -14,22 +14,22 @@ namespace SM.Cases._2_AutoDiscovery {
 
             // act
             registry.Scan(x => {
-                              x.AssemblyContainingType<IMaterial>();
-                              x.AddAllTypesOf<IMaterial>();
-                          });
+                x.AssemblyContainingType<IMaterial>();
+                x.AddAllTypesOf<IMaterial>();
+            });
             var container = new Container(registry);
 
             // assert
             var materials = container.GetAllInstances<IMaterial>().ToList();
 
             materials
-                     .Cast<object>()
-                     .ToList()
-                     .ForEach(i => Console.WriteLine(i.GetType().FullName));
+                .Cast<object>()
+                .ToList()
+                .ForEach(i => Console.WriteLine(i.GetType().FullName));
 
             materials.Count
-                     .Should()
-                     .Be(7);
+                .Should()
+                .Be(7);
         }
 
         [Test]
@@ -38,9 +38,9 @@ namespace SM.Cases._2_AutoDiscovery {
 
             // act
             registry.Scan(x => {
-                              x.AssemblyContainingType<IMaterial>();
-                              x.AddAllTypesOf<IMaterial>();
-                          });
+                x.AssemblyContainingType<IMaterial>();
+                x.AddAllTypesOf<IMaterial>();
+            });
             var container = new Container(registry);
 
             // assert

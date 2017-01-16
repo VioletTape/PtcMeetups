@@ -9,8 +9,8 @@ namespace LightInjectExample.Cases._2_AutoDiscovery {
     [TestFixture]
     public class AutoDiscovery {
         /// <summary>
-        /// Intented to fail. I want to show that it's not obvious
-        /// how to setup Discovery feature
+        ///     Intented to fail. I want to show that it's not obvious
+        ///     how to setup Discovery feature
         /// </summary>
         [Test]
         [Ignore("Comment attribute to see that it not works")]
@@ -24,13 +24,13 @@ namespace LightInjectExample.Cases._2_AutoDiscovery {
             var materials = container.GetAllInstances<IMaterial>().ToList();
 
             materials
-                    .Cast<object>()
-                     .ToList()
-                     .ForEach(i => Console.WriteLine(i.GetType().FullName));
+                .Cast<object>()
+                .ToList()
+                .ForEach(i => Console.WriteLine(i.GetType().FullName));
 
             materials.Count
-                    .Should()
-                    .Be(21);
+                .Should()
+                .Be(21);
         }
 
         [Test]
@@ -44,20 +44,33 @@ namespace LightInjectExample.Cases._2_AutoDiscovery {
             var materials = container.GetAllInstances<IMaterial>().ToList();
 
             materials
-                    .Cast<object>()
-                     .ToList()
-                     .ForEach(i => Console.WriteLine(i.GetType().FullName));
+                .Cast<object>()
+                .ToList()
+                .ForEach(i => Console.WriteLine(i.GetType().FullName));
 
             materials.Count
-                    .Should()
-                    .Be(7);
+                .Should()
+                .Be(7);
+        }
+
+        [Test]
+        public void GetInstanceByType_BaseAndName() {
+            var container = new ServiceContainer();
+
+            // act 
+            container.RegisterAssembly(typeof(IMaterial).Assembly, (tA, tB) => tA == typeof(IMaterial));
+
+            // assert 
+            var gold = container.GetInstance<IMaterial>(typeof(Gold).Name);
+
+            gold.Should()
+                .NotBeNull();
         }
 
 
-
         /// <summary>
-        /// Intented to fail. I want to show that it's not obvious
-        /// how to setup Discovery feature
+        ///     Intented to fail. I want to show that it's not obvious
+        ///     how to setup Discovery feature
         /// </summary>
         [Test]
         [Ignore("Comment attribute to see that it not works")]
@@ -71,21 +84,7 @@ namespace LightInjectExample.Cases._2_AutoDiscovery {
             var gold = container.GetInstance<Gold>();
 
             gold.Should()
-                 .NotBeNull();
-        }
-
-        [Test]
-        public void GetInstanceByType_BaseAndName() {   
-            var container = new ServiceContainer();
-
-            // act 
-            container.RegisterAssembly(typeof(IMaterial).Assembly, (tA, tB) => tA == typeof(IMaterial));
-
-            // assert 
-            var gold = container.GetInstance<IMaterial>(typeof(Gold).Name);
-
-            gold.Should()
-                 .NotBeNull();
+                .NotBeNull();
         }
     }
 }
