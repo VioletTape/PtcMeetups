@@ -18,6 +18,26 @@ namespace Examples.ReactiveCollection_ {
         string Filter { get; set; }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public class ReactiveCollection<TItem> : IReactiveCollection<TItem> {
         private TItem[] source;
         private TItem[] view;
@@ -84,8 +104,8 @@ namespace Examples.ReactiveCollection_ {
             var member = ((MemberExpression) property.Body).Member;
 
             return Observable.FromEventPattern<PropertyChangedEventHandler, PropertyChangedEventArgs>(
-                                                                                                      h => PropertyChanged += h,
-                                                                                                      h => PropertyChanged -= h)
+                                            h => PropertyChanged += h,
+                                             h => PropertyChanged -= h)
                              .Where(_ => string.CompareOrdinal(_.EventArgs.PropertyName, member.Name) == 0)
                              .Select(_ => Unit.Default);
         }

@@ -35,7 +35,7 @@ namespace DryIocExample.Cases._2_AutoDiscovery {
         ///     how to setup Discovery feature
         /// </summary>
         [Test]
-        [Ignore("Comment attribute to see that it not works")]
+//        [Ignore("Comment attribute to see that it not works")]
         public void GetInstanceByType_Directly() {
             var container = new Container();
 
@@ -43,7 +43,7 @@ namespace DryIocExample.Cases._2_AutoDiscovery {
             container.RegisterMany(new[] {
                     typeof(IMaterial).Assembly
                 },
-                type => type == typeof(IMaterial));
+                type => typeof(IMaterial).IsAssignableFrom(type));
 
             // assert
             container.IsRegistered<Gold>()

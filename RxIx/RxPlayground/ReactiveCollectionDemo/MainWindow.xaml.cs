@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
-using Examples;
 using Examples.ReactiveCollection_;
 
 namespace ReactiveCollectionDemo {
@@ -37,15 +36,64 @@ namespace ReactiveCollectionDemo {
             RC = new ReactiveCollection<string>((element, filter) => element.StartsWith(filter));
             Source = new string[0];
             Filter = "";
-            
+
 
             Source = new List<string> {
-                                 "Aaron",
-                                 "Andrey",
-                                 "Bartosz",
-                                 "Barnie",
-                                 "Bastard",
-                             }.ToArray();
+                                          "Aaron",
+                                          "Andrey",
+                                          "Bartosz",
+                                          "Barnie",
+                                          "Bastard",
+                                          "Jolie",
+                                          "Rashida",
+                                          "Doria",
+                                          "Geneva",
+                                          "Nita",
+                                          "Audrey",
+                                          "Leila",
+                                          "Deneen",
+                                          "Wilma",
+                                          "Dorothy",
+                                          "Anisa",
+                                          "Paul",
+                                          "Desmond",
+                                          "Karlene",
+                                          "Kaylene",
+                                          "Laureen",
+                                          "Nerissa",
+                                          "Alphonse",
+                                          "Dakota",
+                                          "Lavette",
+                                          "Myung",
+                                          "Mertie",
+                                          "Cecily",
+                                          "Romeo",
+                                          "Harmony",
+                                          "Sheilah",
+                                          "Melisa",
+                                          "Ray",
+                                          "Sylvia",
+                                          "Foster",
+                                          "Rosenda",
+                                          "Johnathon",
+                                          "Lessie",
+                                          "Jenee",
+                                          "Rikki",
+                                          "Wyatt",
+                                          "Brenton",
+                                          "Nana",
+                                          "Vernice",
+                                          "Tisa",
+                                          "Shelton",
+                                          "Jeanetta",
+                                          "Ranee",
+                                          "Sherry",
+                                          "Jenice",
+                                          "Gilma",
+                                          "Cristal",
+                                          "Nick",
+                                          "Danita"
+                                      }.ToArray();
 
             DataContext = this;
         }

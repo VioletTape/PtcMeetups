@@ -50,7 +50,9 @@ namespace Examples.ReactiveCollectionTestable {
             collection.PropertyChangedAsObservable(x => x.View)
                       .Take(3)
                       .Subscribe(x => Assert.IsTrue(collection.View.Length % 3 == 0));
+
             testScheduler.Start();
+
             Assert.AreEqual(10, collection.View.Length);
         }
 

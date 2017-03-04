@@ -9,11 +9,14 @@
     <StackPanel>
         <StackPanel Orientation="Horizontal" Margin="5">
             <TextBlock>Filter: </TextBlock>
-            <TextBox Width="400" Text="{Binding Filter, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox Width="400" Text="{Binding Filter, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" />
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <ListBox ItemsSource="{Binding Source, Mode=TwoWay}"  MinHeight="100" Width="100"/>
-            <ListBox ItemsSource="{Binding Path=RC.View}" MinHeight="100" Width="100"/>
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ListBox ItemsSource="{Binding Source, Mode=TwoWay}" MinHeight="100" Width="100" MaxHeight="300" />
+            </ScrollViewer>
+            <ListBox ItemsSource="{Binding Path=RC.View}" MinHeight="100" Width="100"  MaxHeight="300"/>
         </StackPanel>
+
     </StackPanel>
 </Window>
